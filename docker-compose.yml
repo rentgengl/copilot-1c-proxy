@@ -1,0 +1,16 @@
+services:
+  copilot-1c-proxy:
+    build: .
+    container_name: copilot-1c-proxy
+    ports:
+      - "8000:8000"
+    environment:
+      ONEC_AI_TOKEN: "Токен 1С:Напарника"
+      ONEC_AI_BASE_URL: "https://code.1c.ai"
+      ONEC_AI_TIMEOUT: "30"
+      ONEC_AI_UI_LANGUAGE: "russian"
+      ONEC_AI_PROGRAMMING_LANGUAGE: ""
+      ONEC_AI_SCRIPT_LANGUAGE: ""
+      MAX_ACTIVE_SESSIONS: "10"
+      SESSION_TTL: "3600"
+    restart: unless-stopped
